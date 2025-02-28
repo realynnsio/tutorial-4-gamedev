@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4my4lqedjwdj"]
+
+[ext_resource type="Script" path="res://scenes/SceneTrigger.gd" id="1_bohlq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0cik"]
+
+[node name="SceneTrigger" type="Area2D"]
+script = ExtResource("1_bohlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i0cik")
+
+[connection signal="body_entered" from="." to="." method="_on_Scene_Trigger_body_entered"]

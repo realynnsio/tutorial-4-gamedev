@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0hnx7ygrjwjv"]
+
+[ext_resource type="PackedScene" uid="uid://4my4lqedjwdj" path="res://scenes/SceneTrigger.tscn" id="2_jvqms"]
+[ext_resource type="Texture2D" uid="uid://bpomp7laf2qmf" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue_dead.png" id="2_yrcck"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qy26n"]
+radius = 32.0
+height = 110.0
+
+[node name="FallingFish" type="RigidBody2D"]
+
+[node name="FishDead" type="Sprite2D" parent="."]
+texture = ExtResource("2_yrcck")
+
+[node name="SceneTrigger" parent="." instance=ExtResource("2_jvqms")]
+sceneName = "LoseScreen"
+
+[node name="CollisionShape2D" parent="SceneTrigger" index="0"]
+shape = SubResource("CapsuleShape2D_qy26n")
+
+[connection signal="body_entered" from="." to="." method="_on_Falling_Fish_body_entered"]
+
+[editable path="SceneTrigger"]
