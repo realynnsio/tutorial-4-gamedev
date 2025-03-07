@@ -71,8 +71,9 @@ scale = Vector2(12, 24)
 sceneName = "WinScreen"
 
 [node name="LoseTrigger" parent="." instance=ExtResource("4_xoy0l")]
-position = Vector2(2101, 381)
-scale = Vector2(233.329, 2.24689)
+position = Vector2(2341, 699)
+scale = Vector2(336.769, 2.24689)
+sceneName = "Level2"
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(416, -797)

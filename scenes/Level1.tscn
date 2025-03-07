@@ -74,8 +74,8 @@ scale = Vector2(12, 24)
 sceneName = "Level2"
 
 [node name="LoseTrigger" parent="." instance=ExtResource("4_dvjm8")]
-position = Vector2(1768, 1000)
-scale = Vector2(186.969, 2.24689)
+position = Vector2(1811, 971)
+scale = Vector2(233.329, 2.24689)
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(817, -187)
