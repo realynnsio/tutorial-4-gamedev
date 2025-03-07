@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://c2d2fogxo5vk5"]
+[gd_scene load_steps=10 format=4 uid="uid://c2d2fogxo5vk5"]
 
+[ext_resource type="Texture2D" uid="uid://b7l54obh0phym" path="res://assets/whatawonderfulworld.png" id="1_wllho"]
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_wnuis"]
 [ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="2_1d1bp"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_7u84a"]
@@ -53,6 +54,14 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_i8af3")
 
 [node name="Level2" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -882.0
+offset_top = -2890.0
+offset_right = 1038.0
+offset_bottom = -1810.0
+scale = Vector2(3.36064, 3.36064)
+texture = ExtResource("1_wllho")
 
 [node name="Player" parent="." instance=ExtResource("1_wnuis")]
 position = Vector2(206, -311)

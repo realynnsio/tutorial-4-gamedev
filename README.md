@@ -38,4 +38,11 @@ Agar Level 2 dapat diintegrasikan dengan Level 1, saya mengganti scene trigger d
 ![win screen](readme/win_screen.jpg)
 
 
+## Polishing
+
+Untuk polishing tambahan, saya hanya menambahkan background hasil karya saya sendiri pada kedua level dengan menambahkan child node `TextureRect` pada keduanya.
+
+![level dengan background](readme/background_level.jpg)
+
+
 *Referensi: https://csui-game-development.github.io/tutorials/tutorial-4/*
