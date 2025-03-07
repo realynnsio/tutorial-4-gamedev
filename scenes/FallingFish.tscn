@@ -14,12 +14,15 @@ height = 110.0
 [node name="FallingFish" type="RigidBody2D"]
 
 [node name="FishDead" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yrcck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.4, 0.4)
 shape = SubResource("CapsuleShape2D_kw5m6")
 
 [node name="SceneTrigger" parent="." instance=ExtResource("2_jvqms")]
+scale = Vector2(0.400002, 0.400002)
 sceneName = "LoseScreen"
 
 [node name="CollisionShape2D" parent="SceneTrigger" index="0"]
