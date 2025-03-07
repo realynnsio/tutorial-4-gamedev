@@ -71,13 +71,13 @@ texture = ExtResource("3_1ilq1")
 
 [node name="WinTrigger" parent="WinArea" instance=ExtResource("4_dvjm8")]
 scale = Vector2(12, 24)
-sceneName = "WinScreen"
+sceneName = "Level2"
 
 [node name="LoseTrigger" parent="." instance=ExtResource("4_dvjm8")]
 position = Vector2(1768, 1000)
 scale = Vector2(186.969, 2.24689)
 
 [node name="Spawner" type="Node2D" parent="."]
-position = Vector2(645, -196)
+position = Vector2(817, -187)
 script = ExtResource("5_pys5i")
 obstacle = ExtResource("6_a6bir")
