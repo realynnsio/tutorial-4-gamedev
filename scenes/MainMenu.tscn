@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://ngxwjgsagh2l"]
+
+[ext_resource type="FontFile" uid="uid://c5prt3eelxyx4" path="res://assets/fonts/bitcrusher condensed bd.ttf" id="1_apw43"]
+[ext_resource type="Texture2D" uid="uid://cne87p0apkuo5" path="res://assets/kenney_platformerpack/PNG/Players/Variable sizes/Pink/alienPink_front.png" id="2_2k8fe"]
+[ext_resource type="Script" path="res://scenes/GameButton.gd" id="2_klh74"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_apw43")
+theme_override_font_sizes/font_size = 100
+text = "Game Title"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NewGame" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "New Game"
+script = ExtResource("2_klh74")
+scene_to_load = "Level1"
+
+[node name="StageSelect" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Stage Select"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_2k8fe")
+stretch_mode = 4
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_New_Game_pressed"]

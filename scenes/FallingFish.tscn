@@ -23,7 +23,7 @@ shape = SubResource("CapsuleShape2D_kw5m6")
 
 [node name="SceneTrigger" parent="." instance=ExtResource("2_jvqms")]
 scale = Vector2(0.400002, 0.400002)
-sceneName = "LoseScreen"
+sceneName = "GameOver"
 
 [node name="CollisionShape2D" parent="SceneTrigger" index="0"]
 shape = SubResource("CapsuleShape2D_qy26n")

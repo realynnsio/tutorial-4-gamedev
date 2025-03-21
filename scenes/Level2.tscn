@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://c2d2fogxo5vk5"]
+[gd_scene load_steps=12 format=4 uid="uid://c2d2fogxo5vk5"]
 
 [ext_resource type="Texture2D" uid="uid://b7l54obh0phym" path="res://assets/whatawonderfulworld.png" id="1_wllho"]
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_wnuis"]
 [ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="2_1d1bp"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_7u84a"]
+[ext_resource type="Script" path="res://scenes/Player.gd" id="3_e5bqe"]
 [ext_resource type="PackedScene" uid="uid://4my4lqedjwdj" path="res://scenes/SceneTrigger.tscn" id="4_xoy0l"]
 [ext_resource type="Script" path="res://scenes/Spawner.gd" id="5_21ll8"]
 [ext_resource type="PackedScene" uid="uid://caxhj8rtqlid7" path="res://scenes/FallingBee.tscn" id="6_4563v"]
+[ext_resource type="PackedScene" uid="uid://mdx4n13mkgxg" path="res://scenes/LifeCounter.tscn" id="9_haqrp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8af3"]
 texture = ExtResource("2_1d1bp")
@@ -65,6 +67,7 @@ texture = ExtResource("1_wllho")
 
 [node name="Player" parent="." instance=ExtResource("1_wnuis")]
 position = Vector2(206, -311)
+script = ExtResource("3_e5bqe")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -88,3 +91,7 @@ sceneName = "Level2"
 position = Vector2(416, -797)
 script = ExtResource("5_21ll8")
 obstacle = ExtResource("6_4563v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("9_haqrp")]

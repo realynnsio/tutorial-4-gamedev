@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var sceneName: String = "LoseScreen"
+@export var sceneName: String = "GameOver"
 
 func _on_lose_trigger_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
