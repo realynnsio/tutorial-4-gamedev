@@ -1,14 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://e5fldkpdgs4x"]
+[gd_scene load_steps=4 format=3 uid="uid://e5fldkpdgs4x"]
 
+[ext_resource type="Script" path="res://scripts/GameOver.gd" id="1_pn0qd"]
 [ext_resource type="FontFile" uid="uid://c5prt3eelxyx4" path="res://assets/fonts/bitcrusher condensed bd.ttf" id="1_squ4m"]
+[ext_resource type="Script" path="res://scenes/GameButton.gd" id="2_53xbr"]
 
-[node name="ColorRect" type="ColorRect"]
+[node name="GameOver" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.203369, 0.0288301, 0.00760131, 1)
+script = ExtResource("1_pn0qd")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -26,3 +29,35 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_squ4m")
 theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 92.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="StartOver" type="LinkButton" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Start Over"
+underline = 1
+script = ExtResource("2_53xbr")
+scene_to_load = "MainMenu"
+
+[node name="StageSelect" type="LinkButton" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Stage Select"
+underline = 1
+script = ExtResource("2_53xbr")
+scene_to_load = "StageSelect"
+
+[connection signal="pressed" from="HBoxContainer/StartOver" to="HBoxContainer/StartOver" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/StageSelect" to="HBoxContainer/StageSelect" method="_on_pressed"]

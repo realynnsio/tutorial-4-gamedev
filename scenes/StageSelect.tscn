@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://bce8ccyvuxrtr"]
+
+[ext_resource type="Texture2D" uid="uid://b7l54obh0phym" path="res://assets/whatawonderfulworld.png" id="1_7obfw"]
+[ext_resource type="Script" path="res://scenes/GameButton.gd" id="2_lwlrt"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StageSelect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.419608)
+layout_mode = 2
+texture = ExtResource("1_7obfw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Level1" type="LinkButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+text = "Level 1"
+underline = 1
+script = ExtResource("2_lwlrt")
+scene_to_load = "Level1"
+
+[node name="Level2" type="LinkButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+text = "Level 2"
+underline = 1
+script = ExtResource("2_lwlrt")
+scene_to_load = "Level2"
+
+[connection signal="pressed" from="HBoxContainer/Level1" to="HBoxContainer/Level1" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/Level2" to="HBoxContainer/Level2" method="_on_pressed"]

@@ -34,6 +34,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "New Game"
+underline = 1
 script = ExtResource("2_klh74")
 scene_to_load = "Level1"
 
@@ -41,6 +42,9 @@ scene_to_load = "Level1"
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Stage Select"
+underline = 1
+script = ExtResource("2_klh74")
+scene_to_load = "StageSelect"
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
@@ -49,4 +53,5 @@ size_flags_vertical = 4
 texture = ExtResource("2_2k8fe")
 stretch_mode = 4
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StageSelect" to="HBoxContainer/VBoxContainer/VBoxContainer/StageSelect" method="_on_pressed"]
