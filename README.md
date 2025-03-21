@@ -1,3 +1,43 @@
+# Tutorial 6: Latihan Mandiri
+
+Reference: https://csui-game-development.github.io/tutorials/tutorial-6/
+
+## 1. Tombol pada layar game over untuk kembali ke menu utama.
+To implement this feature, I added an HBoxContainer in the GameOver scene with 2 Link Buttons: StartOver and StageSelect. Both of these Link Buttons used the same script, `GameButton.gd`. The script is as seen below:
+
+```
+extends LinkButton
+
+@export var scene_to_load : String
+# Called when the node enters the scene tree for the first time.
+func _on_pressed():
+	get_tree().change_scene_to_file(str("res://scenes/" + scene_to_load + ".tscn"))
+```
+
+![game over](readme/gameover.png)
+
+For the StartOver button, I just set the scene to MainMenu, while for the StageSelect Button, I set the scene to StageSelect. Other than this, I also added a GameOver.gd script in the root node of the GameOver scene like so:
+
+```
+extends ColorRect
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Global.lives = 3
+```
+
+This is to reset the player's lives back to 3 after they lose.
+
+## 2. Fitur Select Stage
+To implement the select stage screen, I just added a new scene called StageSelect with a MarginContainer as its root node.
+
+This scene has a texture rect for its background and an HBoxContainer with two link buttons to select between Level1 and Level2. These buttons were attached to the same script as the one mentioned in the GameOver scene but set to point to its respective levels.
+
+![stage select](readme/stageselect.png)
+
+After I was done with that, I just made the select stage button in the main menu and in the game over screen point to this StageSelect scene.
+
+
 # Tutorial 4: Latihan Mandiri
 
 Pada bagian latihan mandiri tutorial 4 ini, saya mendapat tugas untuk membuat level baru dengan tilemap dan obstacle berbeda. Berikut cara saya mengimplementasinya:
