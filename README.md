@@ -2,7 +2,7 @@
 
 Reference: https://csui-game-development.github.io/tutorials/tutorial-6/
 
-## 1. Tombol pada layar game over untuk kembali ke menu utama.
+## 1. Tombol pada layar game over untuk kembali ke menu utama
 To implement this feature, I added an HBoxContainer in the GameOver scene with 2 Link Buttons: StartOver and StageSelect. Both of these Link Buttons used the same script, `GameButton.gd`. The script is as seen below:
 
 ```
